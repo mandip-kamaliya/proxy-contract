@@ -25,7 +25,7 @@ contract proxyContract {
     }
 
     fallback() external payable {
-        address impl = implementation;
+        address impl = imlementaition;
 
         assembly {
             calldatacopy(0, 0, calldatasize())
