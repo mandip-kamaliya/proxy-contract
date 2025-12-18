@@ -8,4 +8,13 @@ contract proxyContract {
         imlementaition = _implementetion;
         admin = msg.sender;
     }
+
+    modifier onlyAdmin() {
+        _onlyAdmin();
+        _;
+    }
+
+    function _onlyAdmin() internal view{
+        require(msg.sender == admin , "only admin can call this function");
+    }
 }
