@@ -14,7 +14,11 @@ contract proxyContract {
         _;
     }
 
-    function _onlyAdmin() internal view{
-        require(msg.sender == admin , "only admin can call this function");
+    function _onlyAdmin() internal view {
+        require(msg.sender == admin, "only admin can call this function");
+    }
+
+    function upgrade(address _implementaition) external onlyAdmin {
+        imlementaition = _implementaition;
     }
 }
