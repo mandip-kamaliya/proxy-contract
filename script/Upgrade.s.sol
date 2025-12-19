@@ -7,10 +7,9 @@ import "../src/ProxyContract.sol";
 
 contract UpgradeScript is Script {
     function run() external {
-        address PROXY_ADDRESS = vm.envAddress("PROXY");
+        address payable PROXY_ADDRESS = payable(vm.envAddress("PROXY"));
 
         vm.startBroadcast();
-
         CounterV2 v2 = new CounterV2();
         ProxyContract proxy = ProxyContract(PROXY_ADDRESS);
 
