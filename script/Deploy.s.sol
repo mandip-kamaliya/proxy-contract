@@ -12,7 +12,7 @@ contract DeployScript is Script {
         CounterV1 V1 = new CounterV1();
         ProxyContract proxy = new ProxyContract(address(V1));
 
-        console.log("counterV1:", address(v1));
+        console.log("counterV1:", address(V1));
         console.log("proxy:", address(proxy));
         vm.stopBroadcast();
     }

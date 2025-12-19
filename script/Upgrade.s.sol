@@ -12,7 +12,7 @@ contract UpgradeScript is Script {
         vm.startBroadcast();
 
         CounterV2 v2 = new CounterV2();
-        LearningProxy proxy = LearningProxy(PROXY_ADDRESS);
+        ProxyContract proxy = ProxyContract(PROXY_ADDRESS);
 
         proxy.upgrade(address(v2));
 
