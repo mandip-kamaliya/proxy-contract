@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.18;
 
-contract proxyContract {
+contract ProxyContract {
     address public imlementaition;
     address public admin;
 
