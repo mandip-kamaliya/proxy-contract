@@ -24,6 +24,7 @@ contract ProxyContract {
         imlementaition = _implementaition;
     }
 
+    receive() external payable {}
     fallback() external payable {
         address impl = imlementaition;
 
