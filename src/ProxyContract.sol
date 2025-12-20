@@ -3,6 +3,7 @@
 pragma solidity ^0.8.18;
 
 contract ProxyContract {
+    uint256 public count; 
     address public imlementaition;
     address public admin;
 
