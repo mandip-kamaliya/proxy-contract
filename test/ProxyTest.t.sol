@@ -13,4 +13,11 @@ contract ProxyTest is Test {
         CounterV1 v1 = new CounterV1();
         proxy = new ProxyContract(address(v1));
     }
+
+     function testV1Logic() public {
+        CounterV1 proxyAsV1 = CounterV1(address(proxy));
+
+        proxyAsV1.increment();
+        assertEq(proxyAsV1.count(), 1);
+    }
 }
