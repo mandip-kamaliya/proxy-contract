@@ -20,4 +20,20 @@ contract ProxyTest is Test {
         proxyAsV1.increment();
         assertEq(proxyAsV1.count(), 1);
     }
+
+    function testUpgradeToV2() public {
+        CounterV1 proxyAsV1 = CounterV1(address(proxy));
+        proxyAsV1.increment();
+        assertEq(proxyAsV1.count(), 1);
+
+        CounterV2 v2 = new CounterV2();
+        proxy.upgrade(address(v2));
+
+        CounterV2 proxyAsV2 = CounterV2(address(proxy));
+        proxyAsV2.increment();
+        assertEq(proxyAsV2.count(), 3);
+
+        proxyAsV2.decrement();
+        assertEq(proxyAsV2.count(), 2);
+    }
 }
