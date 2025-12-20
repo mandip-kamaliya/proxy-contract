@@ -8,7 +8,7 @@ contract CounterV2 {
         count += 1;
     }
 
-    function decrememnt() external {
+    function decrement() external {
         count -= 1;
     }
 }
